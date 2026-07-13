@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ShelterGrade | Structural Engineering for Garage Sanctuaries</title>
+<meta content="Professional-grade emergency shelter blueprints and engineering transparency for DIY garage builds." name="description"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Space+Mono:wght@400;700&amp;family=Source+Sans+3:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#f6faf5",
+                    "surface-container-low": "#f0f5f0",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#444844",
+                    "surface-tint": "#5a605c",
+                    "background": "#f6faf5",
+                    "on-primary-fixed": "#181d1a",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#868b87",
+                    "primary-container": "#1f2421",
+                    "surface-variant": "#dfe4df",
+                    "inverse-primary": "#c3c8c3",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#e1e3dd",
+                    "surface-container-highest": "#dfe4df",
+                    "outline-variant": "#c4c7c3",
+                    "on-secondary-container": "#60635f",
+                    "on-surface": "#181d1a",
+                    "on-primary-fixed-variant": "#434844",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#e5e9e4",
+                    "on-tertiary-fixed-variant": "#4e4543",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#191c19",
+                    "tertiary-fixed": "#eedfdd",
+                    "secondary": "#5c5f5b",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#eef2ed",
+                    "tertiary-container": "#292120",
+                    "outline": "#747874",
+                    "secondary-container": "#dee0db",
+                    "tertiary": "#120b0b",
+                    "primary-fixed": "#dfe4df",
+                    "primary-fixed-dim": "#c3c8c3",
+                    "tertiary-fixed-dim": "#d2c3c1",
+                    "secondary-fixed-dim": "#c5c7c2",
+                    "surface": "#f6faf5",
+                    "on-error-container": "#93000a",
+                    "on-background": "#181d1a",
+                    "on-surface-variant": "#444845",
+                    "on-tertiary-container": "#948786",
+                    "primary": "#090e0b",
+                    "on-tertiary-fixed": "#211a19",
+                    "surface-dim": "#d7dbd6",
+                    "surface-container": "#ebefea",
+                    "inverse-surface": "#2d322e",
+                    "rust": "#D96B27",
+                    "slate-steel": "#1F2421"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "margin-desktop": "40px",
+                    "margin-mobile": "16px",
+                    "max-width": "1280px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "label-sm": ["JetBrains Mono"],
+                    "headline-lg": ["Space Mono"],
+                    "headline-xl": ["Space Mono"],
+                    "headline-md": ["Space Mono"],
+                    "body-lg": ["Source Sans 3"],
+                    "body-md": ["Source Sans 3"],
+                    "headline-lg-mobile": ["Space Mono"],
+                    "label-technical": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-technical": ["14px", {"lineHeight": "1.2", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .grid-pattern {
+            background-image: radial-gradient(circle, #3a413b 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .hard-section {
+            border-bottom: 1px solid #1F2421;
+        }
+        .pressed-field {
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .btn-rust-outline {
+            border: 2px solid #D96B27;
+            color: #181d1a;
+            transition: all 0.2s ease;
+        }
+        .btn-rust-outline:hover {
+            background-color: #D96B27;
+            color: #ffffff;
+        }
+        .btn-rust-solid {
+            background-color: #D96B27;
+            color: #ffffff;
+            transition: all 0.1s ease;
+        }
+        .btn-rust-solid:active {
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+<body class="bg-surface-bright text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 h-16 bg-surface-bright border-b border-primary">
+<div class="flex justify-between items-center max-w-[1280px] mx-auto px-margin-desktop h-full">
+<div class="font-headline-md text-headline-md font-bold text-primary uppercase tracking-tighter">
+                SHELTERGRADE
+            </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-technical text-label-technical text-on-surface-variant hover:text-primary" href="#features">Systems</a>
+<a class="font-label-technical text-label-technical text-on-surface-variant hover:text-primary" href="#diy-resources">Metrics</a>
+<a class="font-label-technical text-label-technical text-on-surface-variant hover:text-primary" href="#blueprints">Blueprints</a>
+<a class="font-label-technical text-label-technical text-on-surface-variant hover:text-primary" href="#community">Community</a>
+</nav>
+<button class="btn-rust-outline px-6 py-2 font-label-technical uppercase tracking-widest text-xs" onclick="logConversion('Header CTA')">
+                Get Blueprints
+            </button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="pt-32 pb-20 hard-section">
+<div class="max-w-[1280px] mx-auto px-margin-desktop grid md:grid-cols-2 gap-12 items-center">
+<!-- Left Content -->
+<div class="space-y-8">
+<h1 class="font-headline-xl text-headline-xl text-primary max-w-xl">
+                    Build Your Own Garage Sanctuary: Safe, Secure, and Ready for Anything.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                    Navigate zoning laws, structural engineering, and build strategies with our community-vetted underground shelter blueprints. We provide the engineering transparency and practical blueprints you need to build a professional-grade emergency shelter beneath your own garage.
+                </p>
+<ul class="space-y-4 font-label-technical text-label-technical">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-rust">verified</span>
+                        Expert structural design checklists tailored for garage spaces
+                    </li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-rust">construction</span>
+                        Step-by-step DIY installation guides to save you thousands
+                    </li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-rust">inventory_2</span>
+                        Vetted equipment recommendations for long-term safety
+                    </li>
+</ul>
+<form class="flex flex-col sm:flex-row gap-0 border border-primary p-1 bg-white" onsubmit="event.preventDefault(); logConversion('Hero Signup')">
+<input class="flex-grow border-none focus:ring-0 font-label-technical text-label-technical px-4 py-4" placeholder="Enter your email to verify coordinates..." required="" type="email"/>
+<button class="btn-rust-solid px-8 py-4 font-label-technical font-bold uppercase whitespace-nowrap" type="submit">
+                        Get Your Starter Shelter Blueprint
+                    </button>
+</form>
+</div>
+<!-- Right Visual -->
+<div class="relative aspect-square border border-primary bg-white p-8 flex items-center justify-center">
+<div class="absolute top-4 right-4 font-label-technical text-[10px] text-outline uppercase tracking-tighter">
+                    Document Ref: SG-BR-001 // Isometric Technical View
+                </div>
+<!-- SVG Blueprint Mockup -->
+<svg class="w-full h-full opacity-90" viewbox="0 0 400 400">
+<rect fill="none" height="200" stroke="#1F2421" stroke-width="2" width="300" x="50" y="50"></rect>
+<line stroke="#1F2421" stroke-dasharray="4" stroke-width="1" x1="50" x2="350" y1="250" y2="250"></line>
+<!-- Sub-surface structure -->
+<rect fill="#f0f5f0" height="100" stroke="#D96B27" stroke-width="2" width="200" x="100" y="270"></rect>
+<!-- Labels -->
+<text fill="#1F2421" font-family="JetBrains Mono" font-size="10" x="110" y="300">STRUCTURAL INTEGRITY [MAX]</text>
+<text fill="#1F2421" font-family="JetBrains Mono" font-size="10" transform="rotate(90 310 280)" x="310" y="280">EXIT SHAFT</text>
+<!-- Measurements -->
+<path d="M50 40 L350 40 M50 35 V45 M350 35 V45" stroke="#1F2421" stroke-width="1"></path>
+<text fill="#1F2421" font-family="JetBrains Mono" font-size="10" x="180" y="35">24' 0" GARAGE SPAN</text>
+</svg>
+<div class="absolute bottom-4 left-4 flex gap-4">
+<div class="flex items-center gap-1">
+<div class="w-3 h-3 bg-rust"></div>
+<span class="text-[10px] font-label-technical uppercase">Reinforced Zone</span>
+</div>
+<div class="flex items-center gap-1">
+<div class="w-3 h-3 border border-primary"></div>
+<span class="text-[10px] font-label-technical uppercase">Existing Slab</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Credibility Bar -->
+<section class="bg-slate-steel grid-pattern py-12 text-surface-bright">
+<div class="max-w-[1280px] mx-auto px-margin-desktop grid md:grid-cols-3 gap-8 text-center md:text-left">
+<div class="border-l-2 border-rust pl-6 py-2">
+<div class="font-headline-md text-headline-md text-rust">0</div>
+<div class="font-label-technical text-label-technical uppercase tracking-wider text-outline-variant">Costly Contractor Fees</div>
+</div>
+<div class="border-l-2 border-rust pl-6 py-2">
+<div class="font-headline-md text-headline-md text-rust">100%</div>
+<div class="font-label-technical text-label-technical uppercase tracking-wider text-outline-variant">Compliant Code-Based Design</div>
+</div>
+<div class="border-l-2 border-rust pl-6 py-2">
+<div class="font-headline-md text-headline-md text-rust">10,000+ PSI</div>
+<div class="font-label-technical text-label-technical uppercase tracking-wider text-outline-variant">Minimum Concrete Specs</div>
+</div>
+</div>
+</section>
+<!-- Feature Grid -->
+<section class="py-20 bg-[#F4F6F0] hard-section" id="features">
+<div class="max-w-[1280px] mx-auto px-margin-desktop">
+<div class="mb-12">
+<span class="font-label-technical text-label-technical text-rust uppercase">[ Technical Modules ]</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-2">Engineering-First Frameworks</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-px bg-primary border border-primary">
+<!-- Card 1 -->
+<div class="bg-white p-10 flex flex-col justify-between group">
+<div>
+<div class="font-label-technical text-label-technical text-outline-variant mb-6">MOD-01</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Interactive Space Planner</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            Calculate your garage footing load-tolerance and excavation limits with our proprietary geometric mapping engine.
+                        </p>
+</div>
+<button class="btn-rust-outline self-start px-6 py-3 font-label-technical text-xs uppercase font-bold" onclick="triggerBetaModal('Space Planner')">
+                        Launch Free Planner Mockup
+                    </button>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-10 flex flex-col justify-between group">
+<div>
+<div class="font-label-technical text-label-technical text-outline-variant mb-6">MOD-02</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Regulatory &amp; Zoning Compliance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            Avoid legal disputes and city fines by validating your build against local subterranean structural codes.
+                        </p>
+</div>
+<button class="btn-rust-outline self-start px-6 py-3 font-label-technical text-xs uppercase font-bold" onclick="triggerBetaModal('Compliance Tool')">
+                        Check Your Zip Code
+                    </button>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-10 flex flex-col justify-between group">
+<div>
+<div class="font-label-technical text-label-technical text-outline-variant mb-6">MOD-03</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Vetted Supplier Directory</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            Direct access to high-grade underground blast doors, air filtration systems, and water-tight containment cells.
+                        </p>
+</div>
+<button class="btn-rust-outline self-start px-6 py-3 font-label-technical text-xs uppercase font-bold" onclick="triggerBetaModal('Suppliers')">
+                        Browse Supplier Database
+                    </button>
+</div>
+<!-- Card 4 -->
+<div class="bg-white p-10 flex flex-col justify-between group">
+<div>
+<div class="font-label-technical text-label-technical text-outline-variant mb-6">MOD-04</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Builder Forum Access</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            Connect with verified DIY builders who have successfully permitted and completed garage sanctuary projects.
+                        </p>
+</div>
+<button class="btn-rust-outline self-start px-6 py-3 font-label-technical text-xs uppercase font-bold" onclick="triggerBetaModal('Forum')">
+                        Request Forum Invite
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- DIY Creator Hub -->
+<section class="py-20 hard-section bg-white" id="diy-resources">
+<div class="max-w-[1280px] mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+<div>
+<span class="font-label-technical text-label-technical text-rust uppercase">[ Field Documentation ]</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-2">Verified Field Builds</h2>
+</div>
+<a class="font-label-technical text-label-technical text-rust hover:underline" href="#">View All Documentation →</a>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Video Card 1 -->
+<div class="group cursor-pointer border border-primary" onclick="triggerLeavingModal('Slab Reinforcement Video')">
+<div class="relative aspect-video bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="A detailed wide-angle architectural photograph of a residential garage during construction. The concrete floor has been excavated to reveal a deep subterranean pit with heavy steel rebar cages being installed. The lighting is harsh and technical, reflecting a high-performance engineering environment with industrial tools visible on the periphery. Modern industrial aesthetic with deep blacks and rust-orange accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWVV_Che0uGb0j05OTOjXYh5a1uMzQXEo3pLYwtrqxxpmxWqmV74L1w568BaUg6-iKJKrJrFsaspZC7uskMocRiGEyOPVg3IImmO9l6KWvvg3P5LV_2bejo_DBsYLKeRrP_L6AbEdxVzltVcMerJyrmk50nHO2FUguLebnc8Ch7SS5JdpT6qMZ1OZ2ucdBWo3qZPvtnNr7RJuYBhAPHeZLKZHnGpnk6Oxr6jVQhbuH-dD2UT-O6sQZV-cmbb8_Gqzm1OsuWbCaen-A"/>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-80 group-hover:opacity-100 transition-opacity">play_circle</span>
+</div>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="bg-rust text-white text-[10px] px-2 py-0.5 font-label-technical uppercase">Structural Integrity</span>
+</div>
+</div>
+<div class="p-4 bg-white border-t border-primary">
+<h4 class="font-label-technical font-bold text-primary">DIY Bunker Builds: Foundation 01</h4>
+<p class="text-xs text-on-surface-variant mt-1">Runtime: 14:22 // Phase: Excavation</p>
+</div>
+</div>
+<!-- Video Card 2 -->
+<div class="group cursor-pointer border border-primary" onclick="triggerLeavingModal('Code Compliance Video')">
+<div class="relative aspect-video bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="Close-up technical shot of a heavy industrial air filtration unit with large galvanized steel ducts. The setting is a clean, minimalist concrete-walled room. Soft white lighting accentuates the metallic textures and precision gauges on the machine. The style is modern industrial, emphasizing survival-grade engineering and structural safety. Colors are muted greys and vibrant orange labels." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5aj4EsN3NHGewwhmnVfUg1MQfZWWWkkGc73QVq13mibSgMpZqzzkyMMD72qnbZf-D4V93cnPdQLqYMOYNYUSFinhk3thihmd6Za_0-JDSXBlx5jLXdOhuJzKmZHj-I1ARIDNN2_gaShksc5m5nUreYB_iYf-xAhLlaEOJRYzFfD9eb2qvyZND9RLus1MEZ7VncBjg6W2-MylPf7zn3OFLCShj1hYodsgt3ChL6GbR_w4Z2KQ0_E-UTi3jfbL7e8AEih1krY65am40"/>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-80 group-hover:opacity-100 transition-opacity">play_circle</span>
+</div>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="bg-slate-steel text-white text-[10px] px-2 py-0.5 font-label-technical uppercase">Code Compliance</span>
+</div>
+</div>
+<div class="p-4 bg-white border-t border-primary">
+<h4 class="font-label-technical font-bold text-primary">Air Filtration Systems for Tight Spaces</h4>
+<p class="text-xs text-on-surface-variant mt-1">Runtime: 08:45 // Phase: Life Support</p>
+</div>
+</div>
+<!-- Video Card 3 -->
+<div class="group cursor-pointer border border-primary" onclick="triggerLeavingModal('Door Installation Video')">
+<div class="relative aspect-video bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="Technical blueprint overlaid on a photograph of a massive steel blast door set into a thick reinforced concrete frame. The door is matte black with a large mechanical wheel lock in high-visibility rust-orange. The surrounding walls are textured concrete with industrial lighting strips. The aesthetic is Brutalist and secure, with precise technical labels pointing to hinges and seals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMwpGFW3LimvWO-hKBwtbKLja9g4EhIe_4Ep8oWDI0mLlAT4E_PasIVi1bwDlXF-iDAL1s62JiFpibM0CbgY_v05tLEejC3EoaZDZ5opwAfukwEt2Q6KxJOXQf-OVDoieDrD4bJDpnoJiBjwOKwD8O-C4BFpEep_gJze1-U1-GOeGv8QOgd0g6xtTxMhqhQfCIth6YVGR4n1vfhgxYcCT2lW1ox5lGkNe5cnlGZcrCk1Ig4FZWDfMhgyIXB8WE5xwMz1bWDkhBuGd8"/>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-80 group-hover:opacity-100 transition-opacity">play_circle</span>
+</div>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="bg-rust text-white text-[10px] px-2 py-0.5 font-label-technical uppercase">Structural Integrity</span>
+</div>
+</div>
+<div class="p-4 bg-white border-t border-primary">
+<h4 class="font-label-technical font-bold text-primary">Blast Door Installation Protocols</h4>
+<p class="text-xs text-on-surface-variant mt-1">Runtime: 22:10 // Phase: Seal &amp; Secure</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Validation Section -->
+<section class="py-24 bg-surface-container-low" id="blueprints">
+<div class="max-w-[800px] mx-auto px-margin-desktop">
+<div class="border-4 border-rust bg-white p-12 text-center shadow-[12px_12px_0px_0px_rgba(31,36,33,1)]">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Ready to Secure Your Property?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+                    Gain instant access to the complete ShelterGrade DIY Garage Blueprint Starter Kit. Includes structural rebar patterns, excavation depth charts, and the full compliance checklist.
+                </p>
+<div class="flex items-center justify-center gap-6 mb-12">
+<span class="font-headline-md text-headline-md text-outline line-through opacity-50">$49.00 USD</span>
+<span class="font-headline-xl text-headline-xl text-rust">0 Free Beta Access</span>
+</div>
+<form class="flex flex-col sm:flex-row gap-0 border border-primary p-1 bg-white mb-6" onsubmit="event.preventDefault(); logConversion('Pricing Signup')">
+<input class="w-32 border-none focus:ring-0 font-label-technical text-label-technical px-4 py-4" placeholder="Zip Code" required="" type="text"/>
+<input class="flex-grow border-none focus:ring-0 font-label-technical text-label-technical px-4 py-4" placeholder="Email Address" required="" type="email"/>
+<button class="btn-rust-solid px-8 py-4 font-label-technical font-bold uppercase whitespace-nowrap" type="submit">
+                        DOWNLOAD STARTER BLUEPRINTS NOW
+                    </button>
+</form>
+<p class="font-label-sm text-label-sm text-outline-variant italic">
+                    No credit card required. Free during beta testing phase.
+                </p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary-container text-surface-bright pt-16 pb-8 border-t border-primary">
+<div class="max-w-[1280px] mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between gap-12 mb-16">
+<div class="max-w-md">
+<div class="font-headline-md text-headline-md font-bold uppercase tracking-tighter mb-4">SHELTERGRADE</div>
+<p class="font-label-technical text-label-technical text-on-tertiary-container">
+                        ENGINEERING-GRADE DIY SUBTERRANEAN SYSTEMS. DESIGNED FOR SURVIVAL. BUILT FOR PRECISION.
+                    </p>
+</div>
+<div class="grid grid-cols-2 gap-12">
+<div class="space-y-4">
+<h5 class="font-label-technical font-bold uppercase text-rust">Documentation</h5>
+<ul class="font-label-sm space-y-2 text-on-tertiary-container">
+<li><a class="hover:text-rust transition-colors" href="#">Engineering Specs</a></li>
+<li><a class="hover:text-rust transition-colors" href="#">Compliance Docs</a></li>
+<li><a class="hover:text-rust transition-colors" href="#">Structural Math</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-label-technical font-bold uppercase text-rust">Legal</h5>
+<ul class="font-label-sm space-y-2 text-on-tertiary-container">
+<li><a class="hover:text-rust transition-colors" href="#">Privacy Protocol</a></li>
+<li><a class="hover:text-rust transition-colors" href="#">Liability Disclaimer</a></li>
+<li><a class="hover:text-rust transition-colors" href="#">Field Verification</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-secondary/20 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div class="font-label-sm text-label-sm text-on-tertiary-container uppercase tracking-tight">
+                    © 2024 SHELTERGRADE STRUCTURAL SYSTEMS. ALL SPECIFICATIONS SUBJECT TO FIELD VERIFICATION BY LICENSED PROFESSIONALS.
+                </div>
+<div class="flex gap-4">
+<span class="font-label-technical text-[10px] text-rust border border-rust px-2 py-0.5">STATUS: OPERATIONAL</span>
+<span class="font-label-technical text-[10px] text-outline-variant border border-outline-variant px-2 py-0.5">BUILD: ALPHA-4.1</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- Beta Modal Overlay -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center p-4" id="beta-modal">
+<div class="absolute inset-0 bg-primary/80 backdrop-blur-sm" onclick="closeModals()"></div>
+<div class="relative bg-white border-2 border-primary p-8 max-w-md w-full shadow-[8px_8px_0px_0px_#D96B27]">
+<div class="flex justify-between items-start mb-6">
+<h3 class="font-headline-md text-headline-md text-primary" id="beta-modal-title">Private Beta</h3>
+<button class="material-symbols-outlined text-primary hover:text-rust" onclick="closeModals()">close</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6" id="beta-modal-desc">
+                This module is currently in private beta. Leave your email to get priority alpha access.
+            </p>
+<form class="space-y-4" onsubmit="event.preventDefault(); logConversion('Beta Form'); closeModals()">
+<input class="w-full border border-primary px-4 py-3 font-label-technical focus:ring-rust focus:border-rust" placeholder="Email for priority access" required="" type="email"/>
+<button class="w-full btn-rust-solid py-4 font-label-technical font-bold uppercase" type="submit">
+                    JOIN WAITLIST
+                </button>
+</form>
+</div>
+</div>
+<!-- Leaving Site Modal -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center p-4" id="leaving-modal">
+<div class="absolute inset-0 bg-primary/80 backdrop-blur-sm" onclick="closeModals()"></div>
+<div class="relative bg-white border-2 border-primary p-8 max-w-md w-full shadow-[8px_8px_0px_0px_#1F2421]">
+<div class="flex justify-between items-start mb-6">
+<h3 class="font-headline-md text-headline-md text-rust">Access Documentation</h3>
+<button class="material-symbols-outlined text-primary hover:text-rust" onclick="closeModals()">close</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                You are about to access protected field documentation. To view full-length video guides, please verify your builder profile.
+            </p>
+<form class="space-y-4" onsubmit="event.preventDefault(); logConversion('Video Access Form'); closeModals()">
+<input class="w-full border border-primary px-4 py-3 font-label-technical focus:ring-rust focus:border-rust" placeholder="Full Name" required="" type="text"/>
+<input class="w-full border border-primary px-4 py-3 font-label-technical focus:ring-rust focus:border-rust" placeholder="Verification Email" required="" type="email"/>
+<button class="w-full bg-primary text-white py-4 font-label-technical font-bold uppercase hover:bg-slate-steel" type="submit">
+                    REQUEST VIEWING ACCESS
+                </button>
+</form>
+</div>
+</div>
+<script>
+        function logConversion(action) {
+            console.log(`[CONVERSION EVENT]: ${action} | Timestamp: ${new Date().toISOString()}`);
+            alert(`Structural Event Recorded: ${action}\n(Smoke test data logged)`);
+        }
+
+        function triggerBetaModal(featureName) {
+            document.getElementById('beta-modal-title').innerText = `${featureName} [Private Beta]`;
+            document.getElementById('beta-modal').classList.remove('hidden');
+            document.getElementById('beta-modal').classList.add('flex');
+        }
+
+        function triggerLeavingModal(contentName) {
+            console.log(`[EXIT INTENT]: User accessing ${contentName}`);
+            document.getElementById('leaving-modal').classList.remove('hidden');
+            document.getElementById('leaving-modal').classList.add('flex');
+        }
+
+        function closeModals() {
+            document.getElementById('beta-modal').classList.add('hidden');
+            document.getElementById('beta-modal').classList.remove('flex');
+            document.getElementById('leaving-modal').classList.add('hidden');
+            document.getElementById('leaving-modal').classList.remove('flex');
+        }
+
+        // Close on ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModals();
+        });
+
+        // Simple Fade in for page elements
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("ShelterGrade Shell Loaded.");
+        });
+    </script>
+</body></html>
